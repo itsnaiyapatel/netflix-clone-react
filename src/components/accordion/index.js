@@ -51,7 +51,7 @@ Accordion.Question = function AccordionQuestion({children, ...restProps}) {
     <Question onClick={() => setToggleShow(!toggleShow)} {...restProps}>
       {children}
       {toggleShow ? (
-        <img src="images/icons/close-slim.png" />
+        <img src="images/icons/close.png" />
       ) : (
         <img src="images/icons/add.png"></img>
       )}

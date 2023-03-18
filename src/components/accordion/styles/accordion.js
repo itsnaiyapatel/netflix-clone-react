@@ -12,7 +12,6 @@ export const Body = styled.div`
   align-items: center;
   max-width: 1100px;
   margin: auto;
-
 `;
 export const Title = styled.h1`
   font-size: 48px;
@@ -23,8 +22,13 @@ export const Title = styled.h1`
   }
 `;
 export const Content = styled.div`
-  margin-bottom: 40px;
-
+  margin: 20px 60px 40px;
+  
+  display: flex;
+  flex-direction: column;  
+  height: 100%; 
+  margin-top: 20px;
+  flex-wrap: wrap;
 `;
 
 export const Item = styled.div`
@@ -42,11 +46,13 @@ export const Question = styled.div`
   background-color: #303030;
   padding: 0.8em 1.2em 0.8em 1.2em;
   align-items: center;
-  img {    
-    filter: brightness(0) invert(1);
-    width: 24px;
+  img {
+    // filter: brightness(0) invert(1);
+    width: 30px;
+    background-color: #303030;
+
     @media (max-width: 600px) {
-      width: 16px;
+      width: 20px;
     }
   }
   @media (max-width: 600px) {
@@ -68,7 +74,6 @@ export const Answer = styled.div`
   &.open {
     max-height: 1200px;
     transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
-    
   }
   span {
     display: block;
