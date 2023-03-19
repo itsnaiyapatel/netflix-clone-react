@@ -46,10 +46,13 @@ export const Question = styled.div`
   background-color: #303030;
   padding: 0.8em 1.2em 0.8em 1.2em;
   align-items: center;
+  :hover {
+    background-color: #404040;
+  }
   img {
-    // filter: brightness(0) invert(1);
+ 
     width: 30px;
-    background-color: #303030;
+    background-color: transparent;
 
     @media (max-width: 600px) {
       width: 20px;
@@ -78,6 +81,7 @@ export const Answer = styled.div`
   span {
     display: block;
     padding: 0.8em 2.2em 0.8em 1.2em;
+    background-color: #303030;
   }
   @media (max-width: 600px) {
     font-size: 16px;

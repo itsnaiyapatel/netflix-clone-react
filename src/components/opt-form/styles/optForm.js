@@ -7,10 +7,11 @@ export const FormContainer = styled.div`
   height: 100%;
   margin-top: 20px;
   flex-wrap: wrap;
-  // border: 1px solid red;
   @media (max-width: 1000px) {
     flex-direction: column;
     align-items: center;
+    display: flex;
+    padding: 10px 50px;
   }
 `;
 export const Input = styled.input`
@@ -40,8 +41,6 @@ export const Button = styled.button`
 
   img {
     margin-left: 10px;
-    // filter: brightness(0) invert(1);
-    // color: white;
     background-color: #e50914;
     width: 24px;
     @media (max-width: 1000px) {
@@ -63,6 +62,7 @@ export const Text = styled.p`
   font-size: 19.2px;
   color: white;
   text-align: center;
+  display: flex;
   @media (max-width: 600px) {
     font-size: 16px;
     line-height: 22px;
