@@ -4,7 +4,7 @@ import Jumbotron from "../components/jumbotron/";
 
 function JumbotronContainer() {
   return (
-    <div>
+    <>
       {jumbotronData.map((item) => (
         <Jumbotron key={item.id} direction={item.direction}>
           <Jumbotron.Section>
@@ -16,7 +16,7 @@ function JumbotronContainer() {
           </Jumbotron.Section>
         </Jumbotron>
       ))}
-    </div>
+    </>
   );
 }
 

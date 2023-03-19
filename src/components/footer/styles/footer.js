@@ -2,12 +2,8 @@ import styled from "styled-components/macro";
 
 export const Body = styled.div`
   display: flex;
-  padding: 50px 5%;
-  margin: auto;
-  max-width: 1100px;
+  margin: 50px 5%;
   flex-direction: column;
-  width: 100%;
-  margin: auto;
 `;
 
 export const Section = styled.div`
@@ -23,7 +19,7 @@ export const SubSection = styled.div`
   flex-wrap: wrap;
 `;
 
-export const CustomLink = styled.a`  
+export const CustomLink = styled.a`
   width: 250px;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 20px;

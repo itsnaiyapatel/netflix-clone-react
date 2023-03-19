@@ -3,14 +3,12 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   border-bottom: 8px solid #222;
-  padding: 70px 0;
-  width: 100%;
+  padding: 50px 5%;
 `;
 export const Body = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1100px;
   margin: auto;
 `;
 export const Title = styled.h1`
@@ -22,21 +20,19 @@ export const Title = styled.h1`
   }
 `;
 export const Content = styled.div`
-  margin: 20px 60px 40px;
-  
+  margin: 20px 0;
+
   display: flex;
-  flex-direction: column;  
-  height: 100%; 
+  flex-direction: column;
+  height: 100%;
   margin-top: 20px;
   flex-wrap: wrap;
 `;
 
 export const Item = styled.div`
   margin-bottom: 10px;
-  max-width: 1100px;
 `;
 export const Question = styled.div`
-  flex: 1;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
@@ -50,7 +46,6 @@ export const Question = styled.div`
     background-color: #404040;
   }
   img {
- 
     width: 30px;
     background-color: transparent;
 

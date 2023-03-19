@@ -5,6 +5,7 @@ export const Item = styled.div`
   border-bottom: 8px solid #222;
   padding: 50px 5%;
   color: white;
+  overflow: hidden;
 `;
 
 export const Body = styled.div`
@@ -13,7 +14,7 @@ export const Body = styled.div`
   justify-content: space-between;
   gap: 20px;
   flex-direction: ${({direction}) => direction};
-  max-width: 1100px;
+  // max-width: 1100px;
   margin: auto;
   width: 100%;
   @media (max-width: 1000px) {
