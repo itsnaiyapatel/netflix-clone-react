@@ -1,8 +1,12 @@
 import React from "react";
-import {Body, Section, SubSection, CustomLink} from "./styles/footer";
+import {Container, Body, Section, SubSection, CustomLink} from "./styles/footer";
 
 export default function Footer({children, ...restProps}) {
-  return <Body>{children}</Body>;
+  return (
+    <Container>
+      <Body>{children}</Body>
+    </Container>
+  );
 }
 
 Footer.Section = function FooterSection({children, ...restProps}) {

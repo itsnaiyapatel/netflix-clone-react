@@ -3,20 +3,25 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   border-bottom: 8px solid #222;
-  padding: 50px 5%;
+  padding: 5%;
 `;
+
 export const Body = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 1200px;
   margin: auto;
 `;
+
 export const Title = styled.h1`
   font-size: 48px;
+  font-weight: 700;
   text-align: center;
   margin-bottom: 8px;
-  @media (max-width: 800px) {
-    font-size: 35px;
+
+  @media (max-width: 960px) {
+    font-size: 32px;
   }
 `;
 export const Content = styled.div`
@@ -25,8 +30,6 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  margin-top: 20px;
-  flex-wrap: wrap;
 `;
 
 export const Item = styled.div`
@@ -35,13 +38,13 @@ export const Item = styled.div`
 export const Question = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   cursor: pointer;
   margin-bottom: 1px;
-  font-size: 26px;
-  font-weight: normal;
+  font-size: 24px;
   background-color: #303030;
   padding: 0.8em 1.2em 0.8em 1.2em;
-  align-items: center;
+
   :hover {
     background-color: #404040;
   }
@@ -53,17 +56,16 @@ export const Question = styled.div`
       width: 20px;
     }
   }
-  @media (max-width: 600px) {
-    font-size: 16px;
+  @media (max-width: 550px) {
+    font-size: 18px;
+    line-height: 22px;
   }
 `;
 export const Answer = styled.div`
-  font-size: 26px;
-  font-weight: normal;
-  line-height: normal;
+  font-size: 24px;
   background-color: #303030;
   white-space: pre-wrap;
-  overflow: hidden;
+
   &.closed {
     max-height: 0;
     overflow: hidden;
@@ -78,8 +80,8 @@ export const Answer = styled.div`
     padding: 0.8em 2.2em 0.8em 1.2em;
     background-color: #303030;
   }
-  @media (max-width: 600px) {
-    font-size: 16px;
+  @media (max-width: 550px) {
+    font-size: 18px;
     line-height: 22px;
   }
 `;

@@ -3,10 +3,7 @@ import styled from "styled-components";
 export const Item = styled.div`
   display: flex;
   border-bottom: 8px solid #222;
-  padding: 50px 5%;
-  color: white;
-  overflow: hidden;
-  background-color: black;
+  padding: 5%;
 `;
 
 export const Body = styled.div`
@@ -15,30 +12,32 @@ export const Body = styled.div`
   justify-content: space-between;
   gap: 20px;
   flex-direction: ${({direction}) => direction};
-  // max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
   width: 100%;
-  @media (max-width: 1000px) {
+
+  @media (max-width: 960px) {
     flex-direction: column;
   }
 `;
 
 export const Title = styled.h1`
   font-size: 48px;
-  line-height: 1.1;
+  font-weight: 900;
   margin-bottom: 8px;
-  @media (max-width: 600px) {
-    font-size: 35px;
+
+  @media (max-width: 960px) {
+    font-size: 32px;
+    font-weight: 700;
   }
 `;
+export const SubTitle = styled.div`
+font-size: 24px;
 
-export const SubTitle = styled.h2`
-  font-size: 24px;
-  font-weight: normal;
-  line-height: normal;
-  @media (max-width: 600px) {
-    font-size: 18px;
-  }
+@media (max-width: 960px) {
+  font-size: 18px;
+}
+
 `;
 
 export const Image = styled.img`
@@ -48,7 +47,8 @@ export const Image = styled.img`
 
 export const Section = styled.div`
   width: 50%;
-  @media (max-width: 1000px) {
+
+  @media (max-width: 960px) {
     width: 100%;
     padding: 0 45px;
     text-align: center;

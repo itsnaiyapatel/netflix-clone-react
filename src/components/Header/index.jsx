@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Container,
+  Background,
   Body,
   Section,
   SubSection,
@@ -13,7 +14,9 @@ import {
 export default function Header({children, ...restProps}) {
   return (
     <Container>
+      <Background>
       <Body {...restProps}>{children}</Body>
+      </Background>      
     </Container>
   );
 }

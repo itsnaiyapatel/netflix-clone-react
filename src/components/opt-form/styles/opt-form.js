@@ -1,30 +1,40 @@
 import styled from "styled-components/macro";
 
-export const FormContainer = styled.div`
+export const Body = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 10px;
-  height: 100%;
-  margin-top: 20px;
+  gap: 15px;
+  margin-top: 25px;
   flex-wrap: wrap;
-  @media (max-width: 1000px) {
+`;
+
+export const Section = styled.div`
+  display: flex;
+  gap: 8px;
+
+  @media (max-width: 550px) {
     flex-direction: column;
     align-items: center;
-    display: flex;
-    padding: 10px 50px;
   }
 `;
+
 export const Input = styled.input`
-  max-width: 450px;
-  width: 100%;
+  max-width: 400px;
+  flex: 1;
   border: 0.5px solid gray;
   padding: 10px;
-  height: 60px;
+  height: 56px;
   background-color: transparent;
   box-sizing: border-box;
   border-radius: 0.25rem;
+
   ::placeholder {
-    color: white;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  @media (max-width: 550px) {
+    width: 80%;
   }
 `;
 export const Button = styled.button`
@@ -33,8 +43,9 @@ export const Button = styled.button`
   background-color: #e50914;
   color: white;
   align-items: center;
-  height: 60px;
-  padding: 0 32px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 56px;
   font-size: 24px;
   border-radius: 0.25rem;
   border: 0;
@@ -43,19 +54,18 @@ export const Button = styled.button`
     margin-left: 10px;
     background-color: #e50914;
     width: 24px;
-    @media (max-width: 1000px) {
+    @media (max-width: 960px) {
       width: 16px;
     }
   }
 
   &:hover {
-    background: #f40612;
+    opacity: 92%;
   }
-  @media (max-width: 1000px) {
-    height: 50px;
-    font-size: 16px;
-    margin-top: 20px;
-    font-weight: bold;
+
+  @media (max-width: 550px) {
+    font-size: 18px;
+    height: 40px;
   }
 `;
 export const Text = styled.p`
@@ -63,7 +73,8 @@ export const Text = styled.p`
   color: white;
   text-align: center;
   display: flex;
-  @media (max-width: 600px) {
+
+  @media (max-width: 550px) {
     font-size: 16px;
     line-height: 22px;
   }

@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "../components/footer";
+import LanguageMenu from "../components/language-menu";
 
 function FooterContainer() {
   return (
@@ -76,7 +77,16 @@ function FooterContainer() {
           </Footer.SubSection>
         </Footer.Section>
 
-        <Footer.Section>Netflix Canada</Footer.Section>
+        <Footer.Section style={{flexDirection: "column"}}>
+          <LanguageMenu
+            optionsArray={["English", "French"]}
+            logo={"images/icons/language.png"}
+            style={{width: "110px"}}
+          />
+          <Footer.CustomLink style={{textDecoration: "none"}}>
+            Netflix Canada
+          </Footer.CustomLink>
+        </Footer.Section>
       </Footer>
     </div>
   );
