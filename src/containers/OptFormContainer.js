@@ -1,7 +1,6 @@
 import React from "react";
 import OptForm from "../components/opt-form";
 
-
 function OptFormContainer() {
   return (
     <OptForm>

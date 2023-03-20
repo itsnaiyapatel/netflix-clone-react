@@ -1,15 +1,16 @@
 import React from "react";
 import Header from "../components/Header";
 import OptFormContainer from "./OptFormContainer";
-// import NetflixLogo from "../images/icons/add.png";
+import NetflixLogo from "../netflix-logo.png";
+import CountryContainer from "./CountryContainer";
 
 function HeaderContainer() {
   return (
     <Header>
       <Header.Section>
-        <Header.Logo>Logo</Header.Logo>
+        <Header.Logo src={NetflixLogo} alt="Netflix" />
         <Header.SubSection>
-          English
+         <CountryContainer />
           <Header.Button>Sign In</Header.Button>
         </Header.SubSection>
       </Header.Section>

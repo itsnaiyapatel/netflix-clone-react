@@ -2,25 +2,22 @@ import styled from "styled-components/macro";
 
 export const Container = styled.div`
   display: flex;
-  padding: 50px 5%;
-  border-bottom: 8px solid #222;
-  overflow: hidden;
-  // position: relative;
-  background-image: url('https://netflixjunkie.com/wp-content/uploads/2022/08/netflix-11-1140x600.jpg');
-  // background-color: blue;
-`;
+  padding: 5% 5%  10%;
+  border-bottom: 8px solid #222;  
+  overflow: hidden;  
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%), url('images/header/header-background.jpg');
+  background-size: cover;
+  height: 60vh;
+`
 export const Body = styled.div`
+  height: 100%;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  border: 2px solid red;
   width: 100%;
-  // max-width: 1000px;
-  margin: auto;
-  // position: relative;   
-  background-color: transparent; 
 `;
 export const Section = styled.div`
-  border: 1px solid green;
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,7 +27,7 @@ export const SubSection = styled.div`
   display: flex;
   gap: 10px;
 `;
-export const Logo = styled.div`
+export const Logo = styled.img`
 height: 36px;
 width: 134px;
 margin-right: 40px;
@@ -56,6 +53,5 @@ export const Title = styled.h1`
     font-size: 35px;
   }
 `;
-export const SubTitle = styled.div``;
-
-// background: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, 8), url('https://netflixjunkie.com/wp-content/uploads/2022/08/netflix-11-1140x600.jpg'));
+export const SubTitle = styled.div`
+`;
