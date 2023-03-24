@@ -1,41 +1,101 @@
 import React from "react";
-import {Form} from "../../components";
+import {useFormik} from "formik";
+import {CustomForm} from "../../components";
 import * as ROUTE from "../../constants/routes";
+import * as yup from "yup";
 
 function LoginFormContainer() {
+
+  const validationSchema = yup.object().shape({
+    email: yup.string().required("Required!"),
+    password: yup.string().required("Required!"),
+  });
+
+  const initialValues = {
+    email: "",
+    password: "",
+  };
+
+  const onSubmit = (values, actions) => {
+    console.log("Submit Result ............");
+    console.log(values);
+    actions.resetForm();
+  };
+
+  const {values, errors, touched, handleBlur, handleChange, handleSubmit} =
+    useFormik({
+      initialValues: initialValues,
+      validationSchema: validationSchema,
+      onSubmit,
+    });
+
   return (
-    <Form>
-      <Form.Base>
-        <Form.Section>
-          <Form.Title>Sign In</Form.Title>
-          <Form.Input placeholder="Email or phone number" />
-          <Form.Input placeholder="Password" />
-          <Form.Button>Sign In</Form.Button>
-          <Form.SubSection>
-            <Form.CheckBox />
-            <Form.Text size={"13px"} style={{flex: "1"}}>
+    <CustomForm>
+      <CustomForm.Base onSubmit={handleSubmit}>
+        <CustomForm.Section>
+          <CustomForm.Title>Sign In</CustomForm.Title>
+
+          <CustomForm.Error>Hello</CustomForm.Error>
+          
+          <CustomForm.Input
+            value={values.email}
+            id="email"
+            onChange={handleChange}
+            placeholder="Email or phone number"
+            type="text"
+            name="email"
+            onBlur={handleBlur}
+            labelClassName={values.email && "filled"}
+            className={errors.email && touched.email ? "input-error" : ""}
+          />
+
+          {errors.email && touched.email && (
+            <CustomForm.ErrorText className="error">{errors.email}</CustomForm.ErrorText>
+          )}
+
+          <CustomForm.Input
+            placeholder="Password"
+            type="password"
+            name="password"
+            id="password"
+            value={values.password}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            labelClassName={values.password && "filled"}
+            className={errors.password && touched.password ? "input-error" : ""}
+          />
+
+          {errors.password && touched.password && (
+            <CustomForm.ErrorText className="error">{errors.password}</CustomForm.ErrorText>
+            )}
+
+          <CustomForm.Button type="submit">Sign In</CustomForm.Button>
+
+          <CustomForm.SubSection>
+            <CustomForm.CheckBox />
+            <CustomForm.Text size={"13px"} style={{flex: "1"}}>
               Remember me
-            </Form.Text>
-            <Form.CustomLink>Need help?</Form.CustomLink>
-          </Form.SubSection>
-        </Form.Section>
-        <Form.Section>
-          <Form.Text style={{marginBottom: "10px"}}>
+            </CustomForm.Text>
+            <CustomForm.CustomLink>Need help?</CustomForm.CustomLink>
+          </CustomForm.SubSection>
+        </CustomForm.Section>
+        <CustomForm.Section>
+          <CustomForm.Text style={{marginBottom: "10px"}}>
             New to Netflix?{" "}
-            <Form.CustomLink
+            <CustomForm.CustomLink
               to={ROUTE.HOME}
               style={{color: "white", fontSize: "16px"}}
             >
               Sign up now.
-            </Form.CustomLink>
-          </Form.Text>
-          <Form.Text size={"13px"}>
+            </CustomForm.CustomLink>
+          </CustomForm.Text>
+          <CustomForm.Text size={"13px"}>
             This page is protected by Google reCAPTCHA to ensure you're not a
             bot. Learn more.
-          </Form.Text>
-        </Form.Section>
-      </Form.Base>
-    </Form>
+          </CustomForm.Text>
+        </CustomForm.Section>
+      </CustomForm.Base>
+    </CustomForm>
   );
 }
 

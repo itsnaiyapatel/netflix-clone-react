@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   Body,
   Base,
@@ -9,25 +10,27 @@ import {
   Section,
   CustomLink,
   SubSection,
+  Error,
+  ErrorText
 } from "./styles/form";
 
-export default function Form({children, ...restProps}) {
+export default function CustomForm({children, ...restProps}) {
   return <Body {...restProps}>{children}</Body>;
 };
 
-Form.Base = function FormBase({children, ...restProps}) {
+CustomForm.Base = function CustomFormBase({children, ...restProps}) {
   return <Base {...restProps}>{children}</Base>;
 };
 
-Form.Title = function FormTitle({children, ...restProps}) {
+CustomForm.Title = function CustomFormTitle({children, ...restProps}) {
   return <Title {...restProps}>{children}</Title>;
 };
 
-Form.Input = function FormInput({children, ...restProps}) {
-  return <Input {...restProps}>{children}</Input>;
+CustomForm.Input = function CustomFormInput({...restProps}) {
+  return <Input {...restProps} />;
 };
 
-Form.Text = function FormText({children, size, ...restProps}) {
+CustomForm.Text = function CustomFormText({children, size, ...restProps}) {
   return (
     <Text size={size} {...restProps}>
       {children}
@@ -35,22 +38,30 @@ Form.Text = function FormText({children, size, ...restProps}) {
   );
 };
 
-Form.Section = function FormSection({children, ...restProps}) {
+CustomForm.Section = function CustomFormSection({children, ...restProps}) {
   return <Section {...restProps}>{children}</Section>;
 };
 
-Form.CustomLink = function FormCustomLink({children, ...restProps}) {
+CustomForm.CustomLink = function CustomFormCustomLink({children, ...restProps}) {
   return <CustomLink {...restProps}>{children}</CustomLink>;
 };
 
-Form.CheckBox = function FormCheckBox({children, ...restProps}) {
+CustomForm.CheckBox = function CustomFormCheckBox({children, ...restProps}) {
   return <input type="checkbox" {...restProps} />;
 };
 
-Form.Button = function FormButton({children, ...restProps}) {
+CustomForm.Button = function CustomFormButton({children, ...restProps}) {
   return <Button {...restProps}>{children}</Button>;
 };
 
-Form.SubSection = function FormSubSection({children, ...restProps}) {
+CustomForm.SubSection = function CustomFormSubSection({children, ...restProps}) {
   return <SubSection {...restProps}>{children}</SubSection>;
+};
+
+CustomForm.Error = function CustomFormError({children, ...restProps}) {
+  return <Error {...restProps}>{children}</Error>;
+};
+
+CustomForm.ErrorText = function CustomFormErrorText({children, ...restProps}) {
+  return <ErrorText {...restProps}>{children}</ErrorText>;
 };

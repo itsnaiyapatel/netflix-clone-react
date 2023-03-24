@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom";
+import FloatingInput from '../../floating-input'
 import styled from "styled-components";
 
 export const Body = styled.div``;
@@ -23,7 +24,7 @@ export const Base = styled.form`
 
 export const Section = styled.div`ic
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 `;
 
 export const Title = styled.h1`
@@ -32,13 +33,12 @@ export const Title = styled.h1`
   font-weight: bold;
   margin-bottom: 28px;
 `;
-export const Input = styled.input`
+export const Input = styled(FloatingInput)`
   background: #333;
   border-radius: 4px;
   border: none;
   color: #fff;
-  margin-bottom: 15px;
-  padding: 15px;
+  margin-bottom: 5px;
   width: 100%;
 `;
 
@@ -75,3 +75,20 @@ export const Text = styled.div`
   color: #737373;
   font-size: ${({size}) => size};
 `;
+
+export const Error = styled.div`
+  background-color: orange;
+  color: white; 
+  padding: 15px;
+  border-radius: 4px;
+  
+
+
+`;
+
+export const ErrorText = styled.p`
+  font-size: 14px;
+  color: orange;
+`;
+
+
