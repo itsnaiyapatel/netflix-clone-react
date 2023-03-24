@@ -1,5 +1,5 @@
 import React from "react";
-import OptForm from "../components/opt-form";
+import {OptForm} from "../../components";
 
 function OptFormContainer() {
   return (

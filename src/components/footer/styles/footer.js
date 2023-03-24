@@ -2,14 +2,21 @@ import styled from "styled-components/macro";
 
 export const Container = styled.div`
   display: flex;
-  padding: 5%;
+  width: 100%;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.75);
+
+
+  @media (max-width: 740px) {
+    border-top: ${({topBorder}) => `${topBorder ? "1px solid gray" : "none"};`};
+  }
 `;
 
 export const Body = styled.div`
+  margin: 5%;
   display: flex;
   flex-direction: column;
   max-width: 1200px;
-  margin: auto;
 `;
 
 export const Section = styled.div`

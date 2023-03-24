@@ -1,10 +1,12 @@
 import React from "react";
-import AdBanner from "../components/ad-banner";
-import AccordionContainer from "../containers/AccordionContainer";
-import AdBannerContainer from "../containers/AdBannerContainer";
-import FooterContainer from "../containers/FooterContainer";
-import HeaderContainer from "../containers/HeaderContainer";
-import JumbotronContainer from "../containers/JumbotronContainer";
+import {
+  AccordionContainer,
+  AdBannerContainer,
+  FooterContainer,
+  HeaderContainer,
+  JumbotronContainer,
+} from "../containers/home/index";
+
 
 function Home() {
   return (
@@ -14,7 +16,6 @@ function Home() {
       <JumbotronContainer />
       <AccordionContainer />
       <FooterContainer />
-      
     </>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import AdBanner from "../components/ad-banner";
+import {AdBanner} from "../../components";
 
 function AdBannerContainer() {
   return (
