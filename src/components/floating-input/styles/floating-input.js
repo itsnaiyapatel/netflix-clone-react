@@ -1,7 +1,6 @@
 import styled from "styled-components/macro";
 
 export const Label = styled.label`
-
   position: absolute;
   pointer-events: none;
   transform: translate(0, 23px) scale(1);
@@ -23,6 +22,16 @@ export const Container = styled.div`
   position: relative;
   margin-top: 15px;
 
+  &.opt-form {
+    margin: 0;
+    max-width: 500px;
+    flex: 1;
+
+    @media (max-width: 550px) {
+      width: 80%;
+      height: 40px;
+    }
+  }
 `;
 
 export const Input = styled.input`
@@ -51,4 +60,19 @@ export const Input = styled.input`
     outline: 0;
     border-bottom: 3px solid orange;
   }
+
+  &.input-error-signup {
+    outline: 0;
+    border: 1px solid red;
+  }
+  
+  &.green-border {
+    border: 1px solid green;
+  }
+`;
+
+export const ErrorText = styled.p`
+  font-size: 14px;
+  color: orange;
+  margin-top: 5px;
 `;

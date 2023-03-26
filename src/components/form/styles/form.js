@@ -33,14 +33,14 @@ export const Title = styled.h1`
   font-weight: bold;
   margin-bottom: 28px;
 `;
-export const Input = styled(FloatingInput)`
-  background: #333;
-  border-radius: 4px;
-  border: none;
-  color: #fff;
-  margin-bottom: 5px;
-  width: 100%;
-`;
+// export const Input = styled(FloatingInput.Input)`
+//   background: #333;
+//   border-radius: 4px;
+//   border: none;
+//   color: #fff;
+//   margin-bottom: 5px;
+//   width: 100%;
+// `;
 
 export const Button = styled.button`
   background: #e50914;
@@ -84,11 +84,6 @@ export const Error = styled.div`
   
 
 
-`;
-
-export const ErrorText = styled.p`
-  font-size: 14px;
-  color: orange;
 `;
 
 

@@ -1,11 +1,10 @@
 import React from "react";
 import {useFormik} from "formik";
-import {CustomForm} from "../../components";
+import {CustomForm, FloatingInput} from "../../components";
 import * as ROUTE from "../../constants/routes";
 import * as yup from "yup";
 
 function LoginFormContainer() {
-
   const validationSchema = yup.object().shape({
     email: yup.string().required("Required!"),
     password: yup.string().required("Required!"),
@@ -35,39 +34,50 @@ function LoginFormContainer() {
         <CustomForm.Section>
           <CustomForm.Title>Sign In</CustomForm.Title>
 
-          <CustomForm.Error>Hello</CustomForm.Error>
-          
-          <CustomForm.Input
-            value={values.email}
-            id="email"
-            onChange={handleChange}
-            placeholder="Email or phone number"
-            type="text"
-            name="email"
-            onBlur={handleBlur}
-            labelClassName={values.email && "filled"}
-            className={errors.email && touched.email ? "input-error" : ""}
-          />
-
-          {errors.email && touched.email && (
-            <CustomForm.ErrorText className="error">{errors.email}</CustomForm.ErrorText>
-          )}
-
-          <CustomForm.Input
-            placeholder="Password"
-            type="password"
-            name="password"
-            id="password"
-            value={values.password}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            labelClassName={values.password && "filled"}
-            className={errors.password && touched.password ? "input-error" : ""}
-          />
-
-          {errors.password && touched.password && (
-            <CustomForm.ErrorText className="error">{errors.password}</CustomForm.ErrorText>
+          <FloatingInput>
+            <FloatingInput.Input
+              value={values.email}
+              id="email"
+              onChange={handleChange}
+              type="email"
+              name="email"
+              onBlur={handleBlur}
+              className={errors.email && touched.email ? "input-error" : ""}
+            />
+            <FloatingInput.Label
+              label={"Email or phone number"}
+              className={values.email && "filled"}
+            />
+            {errors.email && touched.email && (
+              <FloatingInput.ErrorText className="error">
+                {errors.email}
+              </FloatingInput.ErrorText>
             )}
+          </FloatingInput>
+
+          <FloatingInput>
+            <FloatingInput.Input
+              value={values.password}
+              id="password"
+              onChange={handleChange}
+              type="password"
+              name="password"
+              onBlur={handleBlur}
+              className={
+                errors.password && touched.password ? "input-error" : ""
+              }
+            />
+            <FloatingInput.Label
+              label={"Password"}
+              className={values.password && "filled"}
+            />
+            {errors.password && touched.password && (
+              <FloatingInput.ErrorText className="error">
+                {errors.password}
+              </FloatingInput.ErrorText>
+            )}
+          </FloatingInput>
+          
 
           <CustomForm.Button type="submit">Sign In</CustomForm.Button>
 

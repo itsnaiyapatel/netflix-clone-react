@@ -1,6 +1,7 @@
 import styled from "styled-components/macro";
+import FloatingInput from "../../floating-input";
 
-export const Body = styled.div`
+export const Body = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,27 +17,11 @@ export const Section = styled.div`
   @media (max-width: 550px) {
     flex-direction: column;
     align-items: center;
+    gap: 4px;
   }
 `;
 
-export const Input = styled.input`
-  max-width: 400px;
-  flex: 1;
-  border: 0.5px solid gray;
-  padding: 10px;
-  height: 56px;
-  background-color: transparent;
-  box-sizing: border-box;
-  border-radius: 0.25rem;
 
-  ::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-  }
-
-  @media (max-width: 550px) {
-    width: 80%;
-  }
-`;
 export const Button = styled.button`
   display: flex;
   cursor: pointer;
