@@ -1,10 +1,15 @@
-import React from "react";
+import React, {useContext} from "react";
 import {useFormik} from "formik";
 import {CustomForm, FloatingInput} from "../../components";
 import * as ROUTE from "../../constants/routes";
 import * as yup from "yup";
+import { auth } from "../../config/firebase";
+import {FirebaseContext} from "../../context/firebase";
+import {  signInWithEmailAndPassword   } from 'firebase/auth';
 
 function LoginFormContainer() {
+  const {app} = useContext(FirebaseContext);
+
   const validationSchema = yup.object().shape({
     email: yup.string().required("Required!"),
     password: yup.string().required("Required!"),
@@ -15,10 +20,15 @@ function LoginFormContainer() {
     password: "",
   };
 
-  const onSubmit = (values, actions) => {
-    console.log("Submit Result ............");
-    console.log(values);
-    actions.resetForm();
+  const onSubmit = (values) => {
+   
+      signInWithEmailAndPassword(auth, values.email, values.password)
+      .then(() => {
+        console.log("Login Successful.");
+      })
+      .catch((error) => {
+        console.log("Error: " + error);
+      });
   };
 
   const {values, errors, touched, handleBlur, handleChange, handleSubmit} =
@@ -30,7 +40,7 @@ function LoginFormContainer() {
 
   return (
     <CustomForm>
-      <CustomForm.Base onSubmit={handleSubmit}>
+      <CustomForm.Base onSubmit={handleSubmit} method="POST">
         <CustomForm.Section>
           <CustomForm.Title>Sign In</CustomForm.Title>
 
@@ -77,7 +87,6 @@ function LoginFormContainer() {
               </FloatingInput.ErrorText>
             )}
           </FloatingInput>
-          
 
           <CustomForm.Button type="submit">Sign In</CustomForm.Button>
 
