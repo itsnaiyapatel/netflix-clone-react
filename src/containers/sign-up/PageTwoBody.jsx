@@ -4,6 +4,8 @@ import {SignUpForm, titleStyle, inputStyle, buttonStyle} from "./pageTwoStyles";
 import {FloatingInput} from "../../components";
 import {useFormik} from "formik";
 import * as yup from "yup";
+import {createUserWithEmailAndPassword} from "firebase/auth";
+import {auth} from "../../config/firebase";
 
 function PageTwoBody() {
   const validationSchema = yup.object().shape({
@@ -16,9 +18,15 @@ function PageTwoBody() {
     password: "",
   };
 
-  const onSubmit = (values, actions) => {
-    console.log("Submit Result ............");
-    console.log(values);
+  const onSubmit = (values) => {
+    console.log('hello from sign up');
+    createUserWithEmailAndPassword(auth, values.email, values.password)
+      .then((user) => {
+        console.log("USER ---" + JSON.stringify(user));
+      })
+      .catch((error) => {
+        console.log("Error ---" + JSON.stringify(error));
+      });
   };
 
   const {values, errors, touched, handleBlur, handleChange, handleSubmit} =
@@ -30,7 +38,7 @@ function PageTwoBody() {
 
   return (
     <Body>
-      <SignUpForm onSubmit={handleSubmit}>
+      <SignUpForm onSubmit={handleSubmit}  method="POST">
         <Title style={titleStyle}>
           Create a password to start your membership
         </Title>
@@ -86,7 +94,7 @@ function PageTwoBody() {
             </FloatingInput.ErrorText>
           )}
         </FloatingInput>
-        
+
         <Button type="submit" style={buttonStyle}>
           Register
         </Button>

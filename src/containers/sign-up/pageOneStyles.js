@@ -33,7 +33,7 @@ export const SubTitle = styled.div`
   text-align: center;
   line-height: 1.3;
 `;
-export const Button = styled(Link)`
+export const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;

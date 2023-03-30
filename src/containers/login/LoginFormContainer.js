@@ -3,13 +3,10 @@ import {useFormik} from "formik";
 import {CustomForm, FloatingInput} from "../../components";
 import * as ROUTE from "../../constants/routes";
 import * as yup from "yup";
-import { auth } from "../../config/firebase";
-import {FirebaseContext} from "../../context/firebase";
-import {  signInWithEmailAndPassword   } from 'firebase/auth';
+import {signInWithEmailAndPassword} from "firebase/auth";
+import {auth} from "../../config/firebase";
 
 function LoginFormContainer() {
-  const {app} = useContext(FirebaseContext);
-
   const validationSchema = yup.object().shape({
     email: yup.string().required("Required!"),
     password: yup.string().required("Required!"),
@@ -21,10 +18,9 @@ function LoginFormContainer() {
   };
 
   const onSubmit = (values) => {
-   
-      signInWithEmailAndPassword(auth, values.email, values.password)
-      .then(() => {
-        console.log("Login Successful.");
+    signInWithEmailAndPassword(auth, values.email, values.password)
+      .then((user) => {
+        console.log("Login Successful." + JSON.stringify(user));
       })
       .catch((error) => {
         console.log("Error: " + error);
