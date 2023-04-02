@@ -1,5 +1,6 @@
-import React, {useContext} from "react";
+import React, {useState} from "react";
 import {useFormik} from "formik";
+import {useNavigate} from "react-router-dom";
 import {CustomForm, FloatingInput} from "../../components";
 import * as ROUTE from "../../constants/routes";
 import * as yup from "yup";
@@ -7,6 +8,9 @@ import {signInWithEmailAndPassword} from "firebase/auth";
 import {auth} from "../../config/firebase";
 
 function LoginFormContainer() {
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
   const validationSchema = yup.object().shape({
     email: yup.string().required("Required!"),
     password: yup.string().required("Required!"),
@@ -21,9 +25,19 @@ function LoginFormContainer() {
     signInWithEmailAndPassword(auth, values.email, values.password)
       .then((user) => {
         console.log("Login Successful." + JSON.stringify(user));
+        navigate(ROUTE.BROWSE);
       })
       .catch((error) => {
-        console.log("Error: " + error);
+        if (error.code === "auth/user-not-found") {
+          return setError("User not found");
+        } else if (error.code === "auth/wrong-password") {
+          return setError("Wrong password");
+        } else if (error.code === "auth/too-many-requests") {
+          return setError("Too many wrong attempts");
+        } else {
+          setError('Unexpected Error');
+          return console.log(error);
+        }
       });
   };
 
@@ -39,6 +53,7 @@ function LoginFormContainer() {
       <CustomForm.Base onSubmit={handleSubmit} method="POST">
         <CustomForm.Section>
           <CustomForm.Title>Sign In</CustomForm.Title>
+          {error && <CustomForm.Error error={error} />}
 
           <FloatingInput>
             <FloatingInput.Input

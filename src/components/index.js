@@ -9,3 +9,6 @@ export {default as LanguageMenu} from "./language-menu";
 export {default as NetflixLogo} from "./logo";
 export {default as OptForm} from "./opt-form";
 export {default as FloatingInput} from "./floating-input";
+export {default as Navbar} from "./navbar";
+export {default as Loading} from "./loading";
+export {default as Profiles} from "./profiles";

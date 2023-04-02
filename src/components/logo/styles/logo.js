@@ -13,6 +13,8 @@ const handleSize = (size) => {
 };
 
 export const Logo = styled.img`
+  margin-top: 8px;
+  margin-right: 15px;
   width: 160px;
   ${({size}) => handleSize(size)}
   

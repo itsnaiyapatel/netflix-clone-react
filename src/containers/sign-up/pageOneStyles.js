@@ -43,9 +43,19 @@ export const Button = styled.button`
   background-color: #e50914;
   font-size: 24px;
   border: none;
-  text-decoration: none;
+  cursor: pointer;
 
   &:hover {
     background-color: #f6121d;
   }
 `;
+
+export const Error = styled.p`
+  display: flex;
+  align-items: center;
+  color: red;
+  width: 100%;
+  padding: 5px 10px;
+  border: 1px solid red;
+  min-height: 56px;
+`

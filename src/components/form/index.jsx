@@ -27,15 +27,6 @@ CustomForm.Title = function CustomFormTitle({children, ...restProps}) {
   return <Title {...restProps}>{children}</Title>;
 };
 
-// CustomForm.Input = function CustomFormInput({placeholder, ...restProps}) {
-//   return (
-//     <FloatingInput>
-//       <Input {...restProps} />
-//       <FloatingInput.Label label={placeholder} />
-//     </FloatingInput>
-//   );
-// };
-
 CustomForm.Text = function CustomFormText({children, size, ...restProps}) {
   return (
     <Text size={size} {...restProps}>
@@ -70,7 +61,7 @@ CustomForm.SubSection = function CustomFormSubSection({
   return <SubSection {...restProps}>{children}</SubSection>;
 };
 
-CustomForm.Error = function CustomFormError({children, ...restProps}) {
-  return <Error {...restProps}>{children}</Error>;
+CustomForm.Error = function CustomFormError({error, ...restProps}) {
+  return <Error {...restProps}>{error}</Error>;
 };
 

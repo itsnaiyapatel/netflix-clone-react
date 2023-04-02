@@ -1,31 +1,57 @@
-import React from "react";
-import {Title, SubTitle, Body, Button} from "./pageOneStyles";
+import React, {useState} from "react";
+import {Title, SubTitle, Body, Button, Error} from "./pageOneStyles";
 import {SignUpForm, titleStyle, inputStyle, buttonStyle} from "./pageTwoStyles";
 import {FloatingInput} from "../../components";
 import {useFormik} from "formik";
 import * as yup from "yup";
-import {createUserWithEmailAndPassword} from "firebase/auth";
+import * as ROUTE from "../../constants/routes";
+import {createUserWithEmailAndPassword, updateProfile} from "firebase/auth";
 import {auth} from "../../config/firebase";
+import {useNavigate} from "react-router-dom";
 
 function PageTwoBody() {
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
+  const handleFirbaseError = (e) => {
+    if (e.code === "auth/weak-password") {
+      return setError("Weak password!");
+    } else setError("Unexpected error");
+    return console.log(JSON.stringify(e));
+  };
+
   const validationSchema = yup.object().shape({
+    fname: yup.string().required("Required!"),
     email: yup.string().required("Required!"),
     password: yup.string().required("Required!"),
   });
 
   const initialValues = {
+    fname: "",
     email: "",
     password: "",
   };
 
-  const onSubmit = (values) => {
-    console.log('hello from sign up');
+  const onSubmit = (values, action) => {
     createUserWithEmailAndPassword(auth, values.email, values.password)
-      .then((user) => {
-        console.log("USER ---" + JSON.stringify(user));
+      .then(() => {
+        updateProfile(auth.currentUser, {
+          displayName: values.fname,
+          photoURL: Math.floor(Math.random() * 5) + 1,
+        })
+          .then(() => {
+            console.log("Profile updated!");
+            navigate(ROUTE.BROWSE);
+          })
+          .catch((error) => {
+            handleFirbaseError(error);
+            action.resetForm();
+          });
       })
       .catch((error) => {
-        console.log("Error ---" + JSON.stringify(error));
+        handleFirbaseError(error);
+        action.resetForm();
+
       });
   };
 
@@ -38,7 +64,7 @@ function PageTwoBody() {
 
   return (
     <Body>
-      <SignUpForm onSubmit={handleSubmit}  method="POST">
+      <SignUpForm onSubmit={handleSubmit} method="POST">
         <Title style={titleStyle}>
           Create a password to start your membership
         </Title>
@@ -46,6 +72,32 @@ function PageTwoBody() {
           Just a few more steps and you're done!
         </SubTitle>
         <SubTitle style={titleStyle}>We hate paperwork, too.</SubTitle>
+
+        {error && <Error>{error}</Error>}
+
+        <FloatingInput>
+          <FloatingInput.Input
+            style={inputStyle}
+            value={values.fname}
+            id="fname"
+            onChange={handleChange}
+            type="text"
+            name="fname"
+            onBlur={handleBlur}
+            className={`${
+              errors.fname && touched.fname ? "input-error-signup" : ""
+            } ${!errors.fname && touched.fname ? "green-border" : ""}`}
+          />
+          <FloatingInput.Label
+            label={"First name"}
+            className={values.fname && "filled"}
+          />
+          {errors.fname && touched.fname && (
+            <FloatingInput.ErrorText style={{color: "red"}} className="error">
+              {errors.fname}
+            </FloatingInput.ErrorText>
+          )}
+        </FloatingInput>
 
         <FloatingInput>
           <FloatingInput.Input

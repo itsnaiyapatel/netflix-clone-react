@@ -2,8 +2,13 @@ import React from "react";
 import {Body, Section, Image, SubTitle, Button, Title} from "./pageOneStyles";
 
 import * as ROUTE from "../../constants/routes";
+import { useNavigate } from "react-router-dom";
+
+
 
 function PageOneBody() {
+  const navigate = useNavigate();
+
   return (
     <Body>
       <Section>
@@ -13,7 +18,7 @@ function PageOneBody() {
           Netflix is personalized for you. Create a password to start watching
           Netflix
         </SubTitle>
-        <Button to={ROUTE.SIGN_UP_CONTINUE}>Next</Button>
+        <Button onClick={() => navigate(ROUTE.SIGN_UP_CONTINUE)}>Next</Button>
       </Section>
     </Body>
   );

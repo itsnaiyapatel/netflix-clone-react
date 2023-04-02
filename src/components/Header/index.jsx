@@ -4,7 +4,6 @@ import {
   Body,
   Section,
   SubSection,
-  Logo,
   Button,
   Title,
   SubTitle,
@@ -42,3 +41,5 @@ Header.SubTitle = function HeaderSubTitle({children, ...restProps}) {
 Header.GrayBorder = function HeaderGrayBorder({...restProps}) {
   return <GrayBorder {...restProps} />;
 };
+
+

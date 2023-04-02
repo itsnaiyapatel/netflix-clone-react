@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 import styled from "styled-components/macro";
 
 export const Container = styled.div`
-  padding: 2.5% 5% 10%;
+  padding: 1.5% 5% 10%;
 `;
 
 export const Body = styled.div`
@@ -25,13 +25,7 @@ export const SubSection = styled.div`
   display: flex;
   gap: 10px;
 `;
-export const Logo = styled.img`
-  width: 160px;
 
-  @media (max-width: 960px) {
-    width: 100px;
-  }
-`;
 export const Button = styled(Link)`
   display: flex;
   cursor: pointer;
@@ -66,3 +60,5 @@ export const GrayBorder = styled.div`
   width: 100%;
   border-bottom: 8px solid #222;
 `;
+
+
