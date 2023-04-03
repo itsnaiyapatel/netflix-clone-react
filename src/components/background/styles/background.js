@@ -1,14 +1,14 @@
 import styled from "styled-components/macro";
 
 const handleImg = (img) => {
-    const defaultImg = "images/header/header-background.jpg";
-    if (typeof img !== "undefined") {
-      if (img === true || img === defaultImg) {
-        return defaultImg;
-      } else return img;
-    }
-    return null;
-  };
+  const defaultImg = "images/header/header-background.jpg";
+  if (typeof img !== "undefined") {
+    if (img === true || img === defaultImg) {
+      return defaultImg;
+    } else return img;
+  }
+  return null;
+};
 
 export const Body = styled.div`
   background-size: cover;
@@ -21,6 +21,8 @@ export const Body = styled.div`
   url(${handleImg(bg)});`};
 
   @media (max-width: 740px) {
+    background-size: contain;
+    background-repeat: no-repeat;
     ${({bgOnSmallPort}) => `${!bgOnSmallPort && "background: none;"}`}
   }
 `;

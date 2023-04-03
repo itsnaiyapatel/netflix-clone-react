@@ -2,11 +2,9 @@ import React from "react";
 import {FloatingInput, OptForm} from "../../components";
 import {useFormik} from "formik";
 import * as yup from "yup";
-import * as ROUTE from '../../constants/routes'
-import { useNavigate } from "react-router-dom";
-
+import * as ROUTE from "../../constants/routes";
+import {useNavigate} from "react-router-dom";
 function OptFormContainer() {
-
   let navigate = useNavigate();
 
   const validationSchema = yup.object().shape({
@@ -22,8 +20,6 @@ function OptFormContainer() {
   };
 
   const onSubmit = (values) => {
-    console.log("Submit Result ............");
-    console.log(values);
     navigate(ROUTE.SIGN_UP);
   };
 
@@ -48,7 +44,9 @@ function OptFormContainer() {
             type="email"
             name="email"
             onBlur={handleBlur}
-            className={errors.email && touched.email ? "input-error" : ""}
+            className={
+              errors.email && touched.email ? "input-error-signup" : ""
+            }
           />
           <FloatingInput.Label
             label={"Enter Email Address"}
