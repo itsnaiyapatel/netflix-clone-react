@@ -25,7 +25,7 @@ export const Section = styled.div`
 export const Button = styled.button`
   display: flex;
   cursor: pointer;
-  background-color: #e50914;
+  background: #141414;
   color: white;
   align-items: center;
   padding-left: 15px;

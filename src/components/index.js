@@ -12,3 +12,6 @@ export {default as FloatingInput} from "./floating-input";
 export {default as Navbar} from "./navbar";
 export {default as Loading} from "./loading";
 export {default as Profiles} from "./profiles";
+export {default as Feature} from "./feature";
+export {default as Row} from "./row";
+export {default as Card} from "./card";

@@ -64,7 +64,7 @@ export const User = styled.li`
 export const Button = styled.button`
  padding: 8px 15px;
  color: gray;
- background: black;
+ background: #141414;
  border: 1px solid white;
 
  &:hover {

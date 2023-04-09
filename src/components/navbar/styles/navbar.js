@@ -9,6 +9,7 @@ export const Body = styled.div`
   display: flex;
   gap: 15px;
   align-items: center;
+  z-index: 99;
 
   &.black-bg {
     background-color: black;
@@ -18,12 +19,18 @@ export const Body = styled.div`
 export const TextLink = styled(Link)`
   text-decoration: none;
   margin-right: 13px;
+  transition: 0.5s;
+  color: rgb(255, 255, 255, 0.6);
   
   &: hover {
-    transform: scale(1.07);
+    opacity: 0.5;
   }
   &:last-of-type {
     margin: 0;
+  }
+
+  &.active {
+    color: white;
   }
 `;
 

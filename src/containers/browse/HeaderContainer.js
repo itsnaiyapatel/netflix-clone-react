@@ -1,16 +1,9 @@
 import React, {useEffect, useState} from "react";
-import {Background} from "../../components";
+import {Background, Feature} from "../../components";
 import NavContainer from "./NavContainer";
 import axios from "../../axios/axios";
 import requests from "../../axios/requests";
-import {
-  backgroundStyle,
-  PlayButton,
-  Title,
-  Feature,
-  MoreDetailsButton,
-  Buttons,
-} from "./HeaderContainerStyles";
+import {backgroundStyle} from "./HeaderContainerStyles";
 
 function HeaderContainer({profile}) {
   const [randomMovie, setRandomMovie] = useState({});
@@ -33,13 +26,12 @@ function HeaderContainer({profile}) {
       >
         <NavContainer profile={profile} />
         <Feature>
-          <Title>{randomMovie.title || randomMovie.name}</Title>
-          <Buttons>
-          <PlayButton>Play</PlayButton>
-          <MoreDetailsButton>More details</MoreDetailsButton>
-        </Buttons>
+          <Feature.Title>{randomMovie.title || randomMovie.name}</Feature.Title>
+          <Feature.Buttons>
+            <Feature.PlayButton>Play</Feature.PlayButton>
+            <Feature.MoreInfoButton>More Info</Feature.MoreInfoButton>
+          </Feature.Buttons>
         </Feature>
-       
       </Background>
     </>
   );

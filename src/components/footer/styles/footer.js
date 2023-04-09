@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.75);
+  // background-color: rgba(0, 0, 0, 0.75);
 
   &.sign-up-page {
     background-color: #f3f3f3;

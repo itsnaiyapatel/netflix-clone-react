@@ -3,6 +3,7 @@ import {Navbar, NetflixLogo} from "../../components";
 
 function NavContainer({profile}) {
   const [scrolled, setScrolled] = useState(false);
+  const [clicked, setClicked] = useState('Home');
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
@@ -23,12 +24,22 @@ function NavContainer({profile}) {
     <Navbar className={scrolled && "black-bg"}>
       <NetflixLogo size="small" />
       <Navbar.Group>
-        <Navbar.TextLink>Home</Navbar.TextLink>
-        <Navbar.TextLink>TV Shows</Navbar.TextLink>
-        <Navbar.TextLink>Movies</Navbar.TextLink>
-        <Navbar.TextLink>New & Popular</Navbar.TextLink>
-        <Navbar.TextLink>My List</Navbar.TextLink>
-        <Navbar.TextLink>Browse by Languages</Navbar.TextLink>
+        {[
+          "Home",
+          "TV Shows",
+          "Movies",
+          "New & Popular",
+          "My List",
+          "Browse by Languages",
+        ].map((item, index) => (
+          <Navbar.TextLink
+            key={index}
+            onClick={() => setClicked(item)}
+            className={clicked == item ? 'active' : ''}
+          >
+            {item}
+          </Navbar.TextLink>
+        ))}
       </Navbar.Group>
       <Navbar.Group>
         <Navbar.TextLink>{profile.displayName}</Navbar.TextLink>
