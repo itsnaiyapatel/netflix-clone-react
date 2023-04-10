@@ -1,26 +1,29 @@
 import styled from "styled-components/macro";
 
 export const HoverCard = styled.div`
-  display: none;
+  visibility: hidden;
   position: absolute;
   top: 0px;
   left: -75px;
   width: 300px;
   height: 100%;
   background: #141414;
-  z-index: 1;
   flex-direction: column;
+  z-index: 10;
+  transition: 0s visibility;
 `;
 export const Body = styled.div`
   position: relative;
   width: 165px;
   padding: 10px;
-  cursor: pointer;
   height: 350px;
   padding-top: 80px;
 
   &:hover ${HoverCard} {
     display: flex;
+    cursor: pointer;
+    visibility: visible;
+    transition-delay: 1.5s;
   }
 `;
 
@@ -87,10 +90,12 @@ export const HoverDetails1 = styled.div``;
 export const HoverDetails2 = styled.div``;
 
 export const Poster = styled.img`
+  z-index: -1;
   width: 150px;
   object: contain;
-  transition: transform 450ms;
+  cursor: pointer;
 `;
+
 
 export const HoverPoster = styled.img`
   width: 300px;

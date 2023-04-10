@@ -5,7 +5,7 @@ export const Body = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin: 5%;
+  margin: 0 5%;
 `;
 export const Title = styled.h1`
   position: absolute;
