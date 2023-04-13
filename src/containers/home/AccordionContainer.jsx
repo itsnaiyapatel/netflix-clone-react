@@ -1,7 +1,8 @@
 import React from "react";
+
 import faqsData from "../../data/faqsData.json";
 import {Accordion} from "../../components";
-import OptFormContainer from "./OptFormContainer";
+import {OptFormContainer} from "./index";
 
 function AccordionContainer() {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
-import {Body, Section, Image, SubTitle, Button, Title} from "./pageOneStyles";
-
-import * as ROUTE from "../../constants/routes";
 import { useNavigate } from "react-router-dom";
+
+import {Body, Section, Image, SubTitle, Button, Title} from "./pageOneStyles";
+import * as ROUTE from "../../constants/routes";
 
 
 

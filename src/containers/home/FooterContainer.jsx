@@ -1,5 +1,7 @@
 import React from "react";
+
 import {Footer, LanguageMenu} from "../../components";
+import * as ROUTE from '../../constants/routes'
 
 function FooterContainer() {
   return (
@@ -13,63 +15,63 @@ function FooterContainer() {
 
       <Footer.Section>
         <Footer.SubSection>
-          <Footer.CustomLink href={"https://help.netflix.com/en/node/412"}>
+          <Footer.CustomLink to={ROUTE.UNDER_CONSTRUCTION}>
             FAQ
           </Footer.CustomLink>
-          <Footer.CustomLink href={"https://help.netflix.com/en/node/412"}>
+          <Footer.CustomLink to={ROUTE.UNDER_CONSTRUCTION}>
             Account
           </Footer.CustomLink>
-          <Footer.CustomLink href={"https://help.netflix.com/en/node/412"}>
+          <Footer.CustomLink to={ROUTE.UNDER_CONSTRUCTION}>
             Jobs
           </Footer.CustomLink>
-          <Footer.CustomLink href={"https://help.netflix.com/en/node/412"}>
+          <Footer.CustomLink to={ROUTE.UNDER_CONSTRUCTION}>
             Buy Gift Cards
           </Footer.CustomLink>
-          <Footer.CustomLink href={"https://help.netflix.com/en/node/412"}>
+          <Footer.CustomLink to={ROUTE.UNDER_CONSTRUCTION}>
             Privacy
           </Footer.CustomLink>
-          <Footer.CustomLink href={"https://help.netflix.com/en/node/412"}>
+          <Footer.CustomLink to={ROUTE.UNDER_CONSTRUCTION}>
             Contact Us
           </Footer.CustomLink>
-          <Footer.CustomLink href={"https://help.netflix.com/en/node/412"}>
+          <Footer.CustomLink to={ROUTE.UNDER_CONSTRUCTION}>
             Only on Netflix
           </Footer.CustomLink>
 
-          <Footer.CustomLink href={"https://help.netflix.com/en/node/412"}>
+          <Footer.CustomLink to={ROUTE.UNDER_CONSTRUCTION}>
             Gift Card Terms
           </Footer.CustomLink>
-          <Footer.CustomLink href={"https://help.netflix.com/en/node/412"}>
+          <Footer.CustomLink to={ROUTE.UNDER_CONSTRUCTION}>
             Media Center
           </Footer.CustomLink>
-          <Footer.CustomLink href={"https://help.netflix.com/en/node/412"}>
+          <Footer.CustomLink to={ROUTE.UNDER_CONSTRUCTION}>
             Neflix Shop
           </Footer.CustomLink>
-          <Footer.CustomLink href={"https://help.netflix.com/en/node/412"}>
+          <Footer.CustomLink to={ROUTE.UNDER_CONSTRUCTION}>
             Ways to Watch
           </Footer.CustomLink>
-          <Footer.CustomLink href={"https://help.netflix.com/en/node/412"}>
+          <Footer.CustomLink to={ROUTE.UNDER_CONSTRUCTION}>
             Cookie Preferences
           </Footer.CustomLink>
-          <Footer.CustomLink href={"https://help.netflix.com/en/node/412"}>
+          <Footer.CustomLink to={ROUTE.UNDER_CONSTRUCTION}>
             Speed Test
           </Footer.CustomLink>
 
-          <Footer.CustomLink href={"https://help.netflix.com/en/node/412"}>
+          <Footer.CustomLink to={ROUTE.UNDER_CONSTRUCTION}>
             Help Center
           </Footer.CustomLink>
-          <Footer.CustomLink href={"https://help.netflix.com/en/node/412"}>
+          <Footer.CustomLink to={ROUTE.UNDER_CONSTRUCTION}>
             Investor Relations
           </Footer.CustomLink>
-          <Footer.CustomLink href={"https://help.netflix.com/en/node/412"}>
+          <Footer.CustomLink to={ROUTE.UNDER_CONSTRUCTION}>
             Redeem Gift Cards
           </Footer.CustomLink>
-          <Footer.CustomLink href={"https://help.netflix.com/en/node/412"}>
+          <Footer.CustomLink to={ROUTE.UNDER_CONSTRUCTION}>
             Terms of Use
           </Footer.CustomLink>
-          <Footer.CustomLink href={"https://help.netflix.com/en/node/412"}>
+          <Footer.CustomLink to={ROUTE.UNDER_CONSTRUCTION}>
             Corporate Information
           </Footer.CustomLink>
-          <Footer.CustomLink href={"https://help.netflix.com/en/node/412"}>
+          <Footer.CustomLink to={ROUTE.UNDER_CONSTRUCTION}>
             Legal Notices
           </Footer.CustomLink>
         </Footer.SubSection>

@@ -1,6 +1,5 @@
 import React from "react";
 import {Background, NetflixLogo} from "../components";
-import FloatingInput from "../components/floating-input";
 import {LoginFormContainer, FooterContainer} from "../containers/login/index";
 
 function Login() {

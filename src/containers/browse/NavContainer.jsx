@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Navbar, NetflixLogo} from "../../components";
+import {Navbar, NetflixLogo, HoverDropdown} from "../../components";
 
 function NavContainer({profile}) {
   const [scrolled, setScrolled] = useState(false);
@@ -42,7 +42,9 @@ function NavContainer({profile}) {
         ))}
       </Navbar.Group>
       <Navbar.Group>
-        <Navbar.TextLink>{profile.displayName}</Navbar.TextLink>
+        <HoverDropdown>
+          <HoverDropdown.Profile src={`images/users/${profile.photoURL}.png`} alt='user-profile'/>
+        </HoverDropdown>
       </Navbar.Group>
     </Navbar>
   );

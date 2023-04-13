@@ -1,10 +1,11 @@
 import React, {useState} from "react";
 import {useFormik} from "formik";
 import {useNavigate} from "react-router-dom";
-import {CustomForm, FloatingInput} from "../../components";
-import * as ROUTE from "../../constants/routes";
 import * as yup from "yup";
 import {signInWithEmailAndPassword} from "firebase/auth";
+
+import {CustomForm, FloatingInput} from "../../components";
+import * as ROUTE from "../../constants/routes";
 import {auth} from "../../config/firebase";
 
 function LoginFormContainer() {

@@ -1,9 +1,9 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext} from "react";
 import RowContainer from "./RowContainer";
 import { ContentContext } from "../../context/content-context";
 
 function SlidesContainer() {
-  const {moviesRows} = useContext(ContentContext)
+  const {moviesRows} = useContext(ContentContext);
 
   return (
     <>

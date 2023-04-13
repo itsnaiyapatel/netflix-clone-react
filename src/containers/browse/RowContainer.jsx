@@ -1,5 +1,6 @@
-import React, {useState} from "react";
+import React from "react";
 import {Row, Card} from "../../components";
+const tmdbGenreIDs = require("../../data/tmdbGenreIDs.json");
 
 function RowContainer({title, items}) {
   return (
@@ -21,6 +22,24 @@ function RowContainer({title, items}) {
                 <Card.HoverLikeButton />
                 <Card.HoverMoreInfoButton />
               </Card.HoverButtons>
+
+              <Card.HoverDetails1>
+                <Card.Match>20% Match</Card.Match>
+                <Card.Maturity>PG 13</Card.Maturity>
+                <Card.Duration>2h 28m</Card.Duration>
+                <Card.PictureQuality>HD</Card.PictureQuality>
+              </Card.HoverDetails1>
+
+              <Card.HoverDetails2>
+                {item?.genre_ids?.map((id) =>
+                  tmdbGenreIDs.map(
+                    (obj) =>
+                      id === obj.id && (
+                        <Card.ListItem key={id}>{obj.name}</Card.ListItem>
+                      )
+                  )
+                )}
+              </Card.HoverDetails2>
             </Card.HoverCard>
           </Card>
         ))}

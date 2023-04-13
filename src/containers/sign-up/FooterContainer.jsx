@@ -1,5 +1,6 @@
 import React from "react";
-import {Footer, LanguageMenu} from "../../components";
+
+import {Footer} from "../../components";
 
 function FooterContainer() {
   const style = {

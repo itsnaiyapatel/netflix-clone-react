@@ -3,14 +3,18 @@ import styled from "styled-components/macro";
 export const HoverCard = styled.div`
   visibility: hidden;
   position: absolute;
-  top: 0px;
+  top: 38px;
   left: -75px;
   width: 300px;
-  height: 100%;
   background: #141414;
   flex-direction: column;
   z-index: 10;
   transition: 0s visibility;
+  box-shadow: 0px 3px 8px 3px rgba(0, 0, 0, 0.94);
+
+  &:first-of-type {
+    left: -20px;
+  }
 `;
 export const Body = styled.div`
   position: relative;
@@ -18,6 +22,10 @@ export const Body = styled.div`
   padding: 10px;
   height: 350px;
   padding-top: 80px;
+
+  &:first-of-type {
+    margin-left: 5%;
+  }
 
   &:hover ${HoverCard} {
     display: flex;
@@ -86,8 +94,19 @@ export const HoverMoreInfoButton = styled(HoverAddButton)`
   }
 `;
 
-export const HoverDetails1 = styled.div``;
-export const HoverDetails2 = styled.div``;
+export const HoverDetails1 = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+`;
+export const HoverDetails2 = styled.ul`
+  color: white;
+  display: flex;
+  padding: 10px;
+  overflow: hidden;
+  flex-wrap: wrap;
+`;
 
 export const Poster = styled.img`
   z-index: -1;
@@ -96,8 +115,37 @@ export const Poster = styled.img`
   cursor: pointer;
 `;
 
-
 export const HoverPoster = styled.img`
   width: 300px;
   object: contain;
+`;
+
+export const Match = styled.div`
+  color: #46d369;
+  font-weight: 700;
+`;
+export const Maturity = styled.div`
+  border: 1px solid gray;
+  padding: 2px 5px;
+`;
+export const Duration = styled.div``;
+export const PictureQuality = styled.div`
+  font-size: 10px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 2px 6px;
+`;
+
+export const ListItem = styled.li`
+  color: gray;
+
+  &:first-of-type {
+    list-style-type: none;
+  }
+`;
+
+export const ListText = styled.span`
+  color: white;
+  font-size: 12px;
+  margin-right: 25px;
 `;

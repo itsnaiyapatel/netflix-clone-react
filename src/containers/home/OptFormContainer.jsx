@@ -1,9 +1,11 @@
 import React from "react";
-import {FloatingInput, OptForm} from "../../components";
-import {useFormik} from "formik";
 import * as yup from "yup";
+import {useFormik} from "formik";
+
+import {FloatingInput, OptForm} from "../../components";
 import * as ROUTE from "../../constants/routes";
 import {useNavigate} from "react-router-dom";
+
 function OptFormContainer() {
   let navigate = useNavigate();
 

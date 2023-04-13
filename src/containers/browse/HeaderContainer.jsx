@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
+
 import {Background, Feature} from "../../components";
-import NavContainer from "./NavContainer";
+import {NavContainer} from "./index";
 import axios from "../../axios/axios";
 import requests from "../../axios/requests";
 import {backgroundStyle} from "./HeaderContainerStyles";
@@ -23,6 +24,7 @@ function HeaderContainer({profile}) {
         bg={`https://image.tmdb.org/t/p/original${randomMovie?.backdrop_path}`}
         style={backgroundStyle}
         bgOnSmallPort
+        mediaQueryStyle={'background-size: contain; height: 45vh !important;'}
       >
         <NavContainer profile={profile} />
         <Feature>

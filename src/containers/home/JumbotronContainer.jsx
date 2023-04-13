@@ -1,4 +1,5 @@
 import React from "react";
+
 import jumbotronData from "../../data/jumbotronData.json";
 import {Jumbotron} from "../../components";
 

@@ -1,13 +1,14 @@
 import React, {useState} from "react";
+import * as yup from "yup";
+import {createUserWithEmailAndPassword, updateProfile} from "firebase/auth";
+import {useFormik} from "formik";
+import {useNavigate} from "react-router-dom";
+
 import {Title, SubTitle, Body, Button, Error} from "./pageOneStyles";
 import {SignUpForm, titleStyle, inputStyle, buttonStyle} from "./pageTwoStyles";
 import {FloatingInput} from "../../components";
-import {useFormik} from "formik";
-import * as yup from "yup";
 import * as ROUTE from "../../constants/routes";
-import {createUserWithEmailAndPassword, updateProfile} from "firebase/auth";
 import {auth} from "../../config/firebase";
-import {useNavigate} from "react-router-dom";
 
 function PageTwoBody() {
   const [error, setError] = useState(null);

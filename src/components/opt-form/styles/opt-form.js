@@ -25,7 +25,7 @@ export const Section = styled.div`
 export const Button = styled.button`
   display: flex;
   cursor: pointer;
-  background: #141414;
+  background-color: #e50914;
   color: white;
   align-items: center;
   padding-left: 15px;
@@ -37,7 +37,6 @@ export const Button = styled.button`
 
   img {
     margin-left: 10px;
-    background-color: #e50914;
     width: 24px;
     @media (max-width: 960px) {
       width: 16px;

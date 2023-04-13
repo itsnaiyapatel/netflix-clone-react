@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 
 export const Body = styled.div`
@@ -22,8 +23,9 @@ export const Text = styled.p`
   color: black;
 `;
 
-export const CustomLink = styled.a`
+export const CustomLink = styled(Link)`
   display: flex;
   align-items: center;
   color: #1d63c4;
+  text-decoration: none;
 `;

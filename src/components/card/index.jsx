@@ -11,6 +11,12 @@ import {
   HoverAddButton,
   HoverLikeButton,
   HoverMoreInfoButton,
+  Match,
+  Maturity,
+  Duration,
+  PictureQuality,
+  ListItem,
+  ListText,
 } from "./styles/card";
 
 export default function Card({children, ...restProps}) {
@@ -64,7 +70,7 @@ Card.HoverLikeButton = function CardHoverLikeButton({...restProps}) {
 Card.HoverMoreInfoButton = function CardHoverMoreInfoButton({...restProps}) {
   return (
     <HoverMoreInfoButton {...restProps}>
-      <img src="images/icons/white.png" />
+      <img src="images/icons/forward.png" />
     </HoverMoreInfoButton>
   );
 };
@@ -75,4 +81,25 @@ Card.HoverDetails1 = function CardHoverDetails1({children, ...restProps}) {
 
 Card.HoverDetails2 = function CardHoverDetails2({children, ...restProps}) {
   return <HoverDetails2 {...restProps}>{children}</HoverDetails2>;
+};
+
+Card.ListItem = function CardListItem({children, ...restProps}) {
+  return (
+    <ListItem>
+      <ListText {...restProps}>{children}</ListText>
+    </ListItem>
+  );
+};
+
+Card.Match = function CardMatch({children, ...restProps}) {
+  return <Match {...restProps}>{children}</Match>;
+};
+Card.Maturity = function CardMaturity({children, ...restProps}) {
+  return <Maturity {...restProps}>{children}</Maturity>;
+};
+Card.Duration = function CardDuration({children, ...restProps}) {
+  return <Duration {...restProps}>{children}</Duration>;
+};
+Card.PictureQuality = function CardPictureQuality({children, ...restProps}) {
+  return <PictureQuality {...restProps}>{children}</PictureQuality>;
 };

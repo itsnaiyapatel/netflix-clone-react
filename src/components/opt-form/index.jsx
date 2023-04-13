@@ -17,7 +17,7 @@ OptForm.Button = function OptFormButton({children, ...restProps}) {
   return (
     <Button {...restProps}>
       {children}
-      <img src="/images/icons/white.png" alt="icons" style={{color: "white"}} />
+      <img src="/images/icons/forward.png" alt="icons" style={{color: "white"}} />
     </Button>
   );
 };

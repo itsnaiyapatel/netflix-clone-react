@@ -5,17 +5,19 @@ export const Body = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin: 0 5%;
 `;
 export const Title = styled.h1`
   position: absolute;
   top: 30px;
   font-size: 24px;
   color: white;
+  margin: 0 5%;
 `;
 export const ItemList = styled.div`
   display: flex;
   overflow-x: scroll;
+  overflow-y: hidden;
+  margin-right: 5%;
 
   &::-webkit-scrollbar {
     display: none;

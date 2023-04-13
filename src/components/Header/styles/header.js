@@ -6,7 +6,7 @@ export const Container = styled.div`
 `;
 
 export const Body = styled.div`
-  height: 80vh;
+  height: vh;
   display: flex;
   gap: 25vh;
   flex-direction: column;

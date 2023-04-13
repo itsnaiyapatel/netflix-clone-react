@@ -21,7 +21,7 @@ export const Body = styled.div`
   url(${handleImg(bg)});`};
 
   @media (max-width: 740px) {
-    background-size: contain;
+    ${({mediaQueryStyle}) => `${mediaQueryStyle};`}
     background-repeat: no-repeat;
     ${({bgOnSmallPort}) => `${!bgOnSmallPort && "background: none;"}`}
   }

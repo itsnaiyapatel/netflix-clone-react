@@ -1,5 +1,5 @@
 import React from "react";
-import {Header, NetflixLogo, Profiles} from "../../components";
+import {NetflixLogo, Profiles} from "../../components";
 
 function SelectProfileContainer({user, setProfile}) {
   return (
