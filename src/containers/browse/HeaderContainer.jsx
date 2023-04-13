@@ -24,11 +24,13 @@ function HeaderContainer({profile}) {
         bg={`https://image.tmdb.org/t/p/original${randomMovie?.backdrop_path}`}
         style={backgroundStyle}
         bgOnSmallPort
-        mediaQueryStyle={'background-size: contain; height: 45vh !important;'}
+        mediaQueryStyle={"background-size: contain; height: 45vh !important;"}
       >
         <NavContainer profile={profile} />
         <Feature>
-          <Feature.Title>{randomMovie.title || randomMovie.name}</Feature.Title>
+          <Feature.Title>
+            {randomMovie.title || randomMovie.name || randomMovie.original_name}
+          </Feature.Title>
           <Feature.Buttons>
             <Feature.PlayButton>Play</Feature.PlayButton>
             <Feature.MoreInfoButton>More Info</Feature.MoreInfoButton>

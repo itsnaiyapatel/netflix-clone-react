@@ -2,15 +2,13 @@ import React, {useEffect} from "react";
 import {useNavigate} from "react-router-dom";
 import styled from "styled-components";
 
-import * as ROUTE from "../constants/routes";
-
 function UnderConstruction() {
   
   const nav = useNavigate();
 
   useEffect(() => {
     setTimeout(() => {
-      nav(ROUTE.HOME);
+      nav(-1);
     }, 3000);
   }, []);
 
